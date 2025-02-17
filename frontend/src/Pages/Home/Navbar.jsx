@@ -4,25 +4,27 @@ import { MdFacebook, MdMenu, MdSearch } from "react-icons/md";
 import { FaInstagram, FaPinterestP, FaTwitter } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
 import React from "react";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <section className="font-Jost uppercase tracking-widest">
-      {/* top nav section */}
-      <nav className="bg-secondary shadow-sm">
+      {/* Top Nav Section */}
+      <nav className="md:block bg-secondary shadow-sm hidden">
         <div className="md:py-[10px] md:px-8 flex justify-between items-center">
-          {/* newsletter icon part */}
+          {/* Newsletter Icon Part */}
           <div className="inline-flex items-center gap-2">
             <img
               src="https://playgrow.qodeinteractive.com/wp-content/uploads/2022/10/subscribe-icon.png"
-              alt=""
+              alt="Newsletter"
             />
-            <Link to="/" className="text-sm">
+            <Link to="/" className="text-sm hidden md:block">
               NEWSLETTER
             </Link>
           </div>
 
+          {/* Desktop Nav Items */}
           <ul className="hidden md:flex space-x-12 text-sm">
             <li>
               <Link
@@ -77,8 +79,9 @@ const Navbar = () => {
             </li>
           </ul>
 
-          <div className="md:flex items-center gap-5 hidden">
-            <span className="inline-flex items-center gap-1  text-sm">
+          {/* Right Side Icons */}
+          <div className="hidden md:flex items-center gap-5">
+            <span className="inline-flex items-center gap-1 text-sm">
               <MdSearch size={20} /> Search
             </span>
             <div className="md:flex space-x-5">
@@ -88,7 +91,66 @@ const Navbar = () => {
               <FaPinterestP size={20} color="DB915E" />
             </div>
           </div>
+        </div>
+      </nav>
 
+      {/* Main Section - Desktop */}
+      <div className="hidden md:flex my-24 justify-between items-center w-5/6 mx-auto">
+        <div className="flex flex-col items-center gap-2">
+          <img
+            src="https://playgrow.qodeinteractive.com/wp-content/uploads/2022/10/rainbow.png"
+            alt="New In"
+          />
+          NEW IN
+        </div>
+        <div className="flex flex-col items-center gap-2">
+          <img
+            src="https://playgrow.qodeinteractive.com/wp-content/uploads/2022/10/star.png"
+            alt="About Us"
+          />
+          ABOUT US
+        </div>
+        <img
+          src="https://playgrow.qodeinteractive.com/wp-content/uploads/2022/11/logo-img-1-300x91.png"
+          alt="PlayGrow Logo"
+          className="w-[150px]"
+        />
+        <div className="flex flex-col items-center gap-2">
+          <img
+            src="https://playgrow.qodeinteractive.com/wp-content/uploads/2022/10/hearth.png"
+            alt="Wishlist"
+          />
+          WISHLIST
+        </div>
+        <div className="flex flex-col items-center gap-2">
+          <img
+            src="https://playgrow.qodeinteractive.com/wp-content/plugins/playgrow-core/assets/img/cart-empty-large.png"
+            alt="Cart"
+          />
+          CART $0.00
+        </div>
+      </div>
+
+      {/* Mobile Header */}
+      <div className="md:hidden flex items-center justify-between px-4 py-3 bg-white shadow">
+        <img
+          src="https://playgrow.qodeinteractive.com/wp-content/uploads/2022/11/logo-img-1-300x91.png"
+          alt="PlayGrow Logo"
+          className="w-[120px]"
+        />
+        <div className="flex items-center space-x-4">
+          <div className="relative">
+            <img
+              src="https://playgrow.qodeinteractive.com/wp-content/plugins/playgrow-core/assets/img/cart-empty-large.png"
+              alt="Cart"
+              className="w-[30px]"
+            />
+            <span className="absolute -top-1 -right-1 bg-primary text-white text-xs px-1 rounded-full">
+              0
+            </span>
+          </div>
+          <span className="text-xs">cart $0.00</span>
+          {/* Mobile Menu Button */}
           <button
             className="md:hidden text-gray-800"
             onClick={() => setIsOpen(!isOpen)}
@@ -100,69 +162,49 @@ const Navbar = () => {
             )}
           </button>
         </div>
-        {isOpen && (
-          <ul className="md:hidden bg-white shadow-lg space-y-4 p-4">
-            <li>
-              <Link to="/" className="block text-gray-800 hover:text-primary">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/shop-list"
-                className="block text-gray-800 hover:text-primary"
-              >
-                Shop List
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/shop-single"
-                className="block text-gray-800 hover:text-primary"
-              >
-                Shop Single
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/about"
-                className="block text-gray-800 hover:text-primary"
-              >
-                About Us
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/contact"
-                className="block text-gray-800 hover:text-primary"
-              >
-                Blog
-              </Link>
-            </li>
-          </ul>
-        )}
-      </nav>
-
-      {/* Main section */}
-      <div className="my-24 flex justify-between items-center w-5/6 mx-auto">
-        <div className="flex flex-col items-center gap-2">
-          <img src="https://playgrow.qodeinteractive.com/wp-content/uploads/2022/10/rainbow.png" alt="" />
-          NEW IN
-        </div>
-        <div className="flex flex-col items-center gap-2">
-          <img src="https://playgrow.qodeinteractive.com/wp-content/uploads/2022/10/star.png" alt="" />
-          about us
-        </div>
-        <img src="https://playgrow.qodeinteractive.com/wp-content/uploads/2022/11/logo-img-1-300x91.png" alt="" />
-        <div className="flex flex-col items-center gap-2">
-          <img src="https://playgrow.qodeinteractive.com/wp-content/uploads/2022/10/hearth.png" alt="" />
-          wishlist
-        </div>
-        <div className="flex flex-col items-center gap-2">
-          <img src="https://playgrow.qodeinteractive.com/wp-content/plugins/playgrow-core/assets/img/cart-empty-large.png" alt="" />
-          cart $0.00
-        </div>
       </div>
+
+      {isOpen && (
+        <ul className="md:hidden bg-white shadow-lg space-y-4 p-4">
+          <li>
+            <Link to="/" className="block text-gray-800 hover:text-primary">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/shop-list"
+              className="block text-gray-800 hover:text-primary"
+            >
+              Shop List
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/shop-single"
+              className="block text-gray-800 hover:text-primary"
+            >
+              Shop Single
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/about"
+              className="block text-gray-800 hover:text-primary"
+            >
+              About Us
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/contact"
+              className="block text-gray-800 hover:text-primary"
+            >
+              Blog
+            </Link>
+          </li>
+        </ul>
+      )}
     </section>
   );
 };
