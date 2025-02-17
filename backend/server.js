@@ -24,6 +24,23 @@ async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
     await client.connect();
+
+    const sectionCollection = client.db("playgrowDB").collection("sections");
+    const productCollection = client.db("playgrowDb").collection("products");
+
+    // post a single section
+    app.post("/sections", async(req, res) => {
+        const section = req.body;
+        const result = await sectionCollection.insertOne(section);
+        res.send(result);
+    })
+
+    // get all sections
+    app.get("/sections", async(req, res) => {
+        const result = await sectionCollection.find().toArray();
+        res.send(result);
+    })
+
     // Send a ping to confirm a successful connection
     // await client.db("admin").command({ ping: 1 });
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
