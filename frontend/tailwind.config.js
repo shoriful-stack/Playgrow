@@ -5,7 +5,11 @@ module.exports = {
     extend: {
       fontFamily: {
         Jost: "'Jost', serif",
-      }
+      },
+      colors: {
+        primary: "#DB915E",
+        secondary: "#F7F3F0",
+      },
     },
   },
   plugins: [],
