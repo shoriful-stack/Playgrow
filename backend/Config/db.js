@@ -23,5 +23,6 @@ connectDB();
 
 const db = client.db("playgrowDB");
 const categoryCollection = db.collection("categories");
+const productCollection = db.collection("products");
 
-module.exports = { categoryCollection};
+module.exports = { categoryCollection, productCollection};
