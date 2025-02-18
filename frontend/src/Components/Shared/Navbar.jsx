@@ -10,9 +10,9 @@ const Navbar = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   return (
-    <section className="font-Jost uppercase tracking-widest">
+    <section className="uppercase tracking-widest">
       {/* Top Nav Section */}
-      <nav className="md:block bg-secondary shadow-sm hidden">
+      <nav className="md:block fixed w-full z-50 bg-secondary shadow-sm hidden lg:-mt-28">
         <div className="md:py-[10px] md:px-8 flex justify-between items-center">
           {/* Newsletter Icon Part */}
           <div className="inline-flex items-center gap-2">
@@ -109,7 +109,7 @@ const Navbar = () => {
       </nav>
 
       {/* Main Section - Desktop */}
-      <div className="hidden md:flex mt-24 justify-between items-center w-5/6 mx-auto">
+      <div className="hidden md:flex mt-28 justify-between items-center w-[87%] mx-auto">
         <>
           {isSearchOpen ? (
             <div className="my-6 w-full">
