@@ -109,7 +109,7 @@ const Navbar = () => {
       </nav>
 
       {/* Main Section - Desktop */}
-      <div className="hidden md:flex my-24 justify-between items-center w-5/6 mx-auto">
+      <div className="hidden md:flex mt-24 justify-between items-center w-5/6 mx-auto">
         <>
           {isSearchOpen ? (
             <div className="my-6 w-full">
