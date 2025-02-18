@@ -14,8 +14,8 @@ const Home = () => {
         <Products />
         <Blog />
         <NewArrival />
-        <Gallery />
         <Category />
+        <Gallery />
       </div>
     </div>
   );
