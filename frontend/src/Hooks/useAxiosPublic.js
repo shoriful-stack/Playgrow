@@ -1,9 +1,9 @@
 import axios from "axios";
 
 export const axiosPublic = axios.create({
-    baseURL: import.meta.env.REACT_APP_API_URL
-})
+  baseURL: process.env.REACT_APP_API_URL,
+});
 const useAxiosPublic = () => {
-    return axiosPublic
-}
+  return axiosPublic;
+};
 export default useAxiosPublic;

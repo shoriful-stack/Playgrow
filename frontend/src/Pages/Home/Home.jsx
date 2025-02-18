@@ -4,6 +4,7 @@ import Products from "./Products";
 import Blog from "./Blog";
 import NewArrival from "./NewArrival";
 import Gallery from "./Gallery";
+import Category from "./Category";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
         <Blog />
         <NewArrival />
         <Gallery />
+        <Category />
       </div>
     </div>
   );
