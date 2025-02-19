@@ -40,13 +40,13 @@ const Navbar = () => {
                 Pages
               </button>
               <div className="absolute -left-6 mt-2 bg-white border shadow-lg rounded-sm p-4 space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-44">
-                <Link to="/shop-list" className="block hover:text-primary">
+                <Link to="/about-us" className="block hover:text-primary">
                   About Us
                 </Link>
-                <Link to="/shop-single" className="block hover:text-primary">
+                <Link to="/faq" className="block hover:text-primary">
                   FAQ Page
                 </Link>
-                <Link to="/shop-single" className="block hover:text-primary">
+                <Link to="/contact-us" className="block hover:text-primary">
                   Contact Us
                 </Link>
               </div>
@@ -55,19 +55,37 @@ const Navbar = () => {
               <button className="hover:text-primary transition duration-300 uppercase">
                 Shop
               </button>
-              <div className="absolute -left-6 mt-2 bg-white border shadow-lg rounded-sm p-4 space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-44">
+              {/* First dropdown */}
+              <div className="absolute left-0 mt-2 bg-white border shadow-lg rounded-sm p-4 space-y-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 w-44">
                 <Link to="/shop-list" className="block hover:text-primary">
                   Shop List
                 </Link>
                 <Link to="/shop-single" className="block hover:text-primary">
                   Shop Single
                 </Link>
-                <Link to="/shop-single" className="block hover:text-primary">
-                  Shop Layouts
-                </Link>
-                <Link to="/shop-single" className="block hover:text-primary">
-                  Shop Pages
-                </Link>
+
+                {/* Nested dropdown */}
+                <div className="relative group/submenu">
+                  <button className="uppercase flex justify-between items-center w-full hover:text-primary transition duration-300">
+                    Shop Pages <span className="ml-2">{">"}</span>
+                  </button>
+
+                  {/* Nested dropdown */}
+                  <div className="absolute left-full top-0 mt-0 bg-white border shadow-lg rounded-sm p-4 space-y-2 opacity-0 invisible group-hover/submenu:opacity-100 group-hover/submenu:visible transition-all duration-300 w-44">
+                    <Link to="/my-account" className="block hover:text-primary">
+                      My Account
+                    </Link>
+                    <Link to="/wishlist" className="block hover:text-primary">
+                      Wishlist
+                    </Link>
+                    <Link to="/cart" className="block hover:text-primary">
+                      Cart
+                    </Link>
+                    <Link to="/checkout" className="block hover:text-primary">
+                      Checkout
+                    </Link>
+                  </div>
+                </div>
               </div>
             </li>
             <li>
@@ -116,7 +134,7 @@ const Navbar = () => {
               <input
                 type="text"
                 placeholder="Search..."
-                className="border-b-2 border-gray-400 outline-none p-2 text-3xl w-full" 
+                className="border-b-2 border-gray-400 outline-none p-2 text-3xl w-full"
               />
             </div>
           ) : (
@@ -125,6 +143,7 @@ const Navbar = () => {
                 <img
                   src="https://playgrow.qodeinteractive.com/wp-content/uploads/2022/10/rainbow.png"
                   alt="New In"
+                  className="hover:-translate-y-2 cursor-pointer duration-500"
                 />
                 NEW IN
               </div>
@@ -132,6 +151,7 @@ const Navbar = () => {
                 <img
                   src="https://playgrow.qodeinteractive.com/wp-content/uploads/2022/10/star.png"
                   alt="About Us"
+                  className="hover:-translate-y-2 cursor-pointer duration-500"
                 />
                 ABOUT US
               </div>
@@ -144,14 +164,20 @@ const Navbar = () => {
                 <img
                   src="https://playgrow.qodeinteractive.com/wp-content/uploads/2022/10/hearth.png"
                   alt="Wishlist"
+                  className="hover:-translate-y-2 cursor-pointer duration-500"
                 />
                 WISHLIST
               </div>
               <div className="flex flex-col items-center gap-2">
-                <img
-                  src="https://playgrow.qodeinteractive.com/wp-content/plugins/playgrow-core/assets/img/cart-empty-large.png"
-                  alt="Cart"
-                />
+                <div className="relative hover:-translate-y-2 cursor-pointer duration-500">
+                  <img
+                    src="https://playgrow.qodeinteractive.com/wp-content/plugins/playgrow-core/assets/img/cart-empty-large.png"
+                    alt="Cart"
+                  />
+                  <span className="absolute top-3 -right-1 bg-secondary shadow-md text-sm py-1 px-[7px] rounded-full">
+                    0
+                  </span>
+                </div>
                 CART $0.00
               </div>
             </>
