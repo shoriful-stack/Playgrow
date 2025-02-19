@@ -4,6 +4,7 @@ require("dotenv").config();
 
 const categoryRoutes = require("./Routes/categoryRoutes");
 const productRoutes = require("./Routes/productRoutes");
+const blogRoutes = require("./Routes/blogRoutes");
 const reviewRoutes = require("./Routes/reviewRoutes");
 
 const app = express();
@@ -12,6 +13,7 @@ app.use(cors());
 
 app.use("/categories", categoryRoutes);
 app.use("/products", productRoutes);
+app.use("/blogs", blogRoutes);
 app.use("/reviews", reviewRoutes);
 
 app.get("/", (req, res) => {
