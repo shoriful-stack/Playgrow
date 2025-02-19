@@ -7,6 +7,7 @@ import Gallery from "./Gallery";
 import Category from "./Category";
 import Review from "./Review";
 import Newsletter from "./Newsletter";
+import Featured from "./Featured";
 
 const Home = () => {
   return (
@@ -29,6 +30,9 @@ const Home = () => {
       </div>
       <div className="w-[87%] mx-auto my-6 lg:mt-24">
         <Category />
+      </div>
+      <div className="w-[87%] mx-auto my-6 lg:mt-24">
+        <Featured />
       </div>
       <div className="w-full lg:mt-24 mt-12">
         <Gallery />
