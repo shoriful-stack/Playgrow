@@ -4,7 +4,7 @@ import { MdFacebook } from "react-icons/md";
 const Footer = () => {
   return (
     <footer className="bg-white text-black pb-4 pt-24 border-t w-[87%] mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-left">
         {/* Company Section */}
         <div>
           <h3 className="tracking-widest text-lg mb-4 uppercase">Company</h3>
@@ -106,7 +106,7 @@ const Footer = () => {
       </div>
 
       {/* Footer Bottom */}
-      <div className="flex justify-between mt-20 text-sm pt-5">
+      <div className="flex justify-between flex-col md:flex-row gap-3 md:gap-0 mt-20 text-sm pt-5">
         <div className="flex flex-col md:flex-row items-baseline space-y-1 md:space-x-8">
           <img
             src="https://playgrow.qodeinteractive.com/wp-content/uploads/2022/11/logo-img-1-300x91.png"
