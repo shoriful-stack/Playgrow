@@ -20,7 +20,7 @@ const Home = () => {
       <div className="w-[87%] mx-auto my-6 lg:mt-24">
         <Blog />
       </div>
-      <div className="w-full lg:mt-24 mt-6">
+      <div className="w-full lg:mt-24 mt-12">
         <Review />
         <Newsletter />
       </div>
@@ -30,7 +30,7 @@ const Home = () => {
       <div className="w-[87%] mx-auto my-6 lg:mt-24">
         <Category />
       </div>
-      <div className="w-[87%] mx-auto my-6 lg:mt-24">
+      <div className="w-full lg:mt-24 mt-12">
         <Gallery />
       </div>
     </div>
