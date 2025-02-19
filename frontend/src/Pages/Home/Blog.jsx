@@ -16,7 +16,7 @@ const Blog = () => {
         }
       />
 
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 lg:gap-6 gap-2 mb-12">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-6 mb-20">
         {blogs?.map((blog, index) => (
           <BlogCard key={index} blog={blog} />
         ))}

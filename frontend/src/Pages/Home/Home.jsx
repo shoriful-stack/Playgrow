@@ -6,6 +6,7 @@ import NewArrival from "./NewArrival";
 import Gallery from "./Gallery";
 import Category from "./Category";
 import Review from "./Review";
+import Newsletter from "./Newsletter";
 
 const Home = () => {
   return (
@@ -19,17 +20,18 @@ const Home = () => {
       <div className="w-[87%] mx-auto my-6 lg:mt-24">
         <Blog />
       </div>
-      <div className="w-full lg:mt-24 my-6">
+      <div className="w-full lg:mt-24 mt-6">
         <Review />
+        <Newsletter />
       </div>
       <div className="w-[87%] mx-auto my-6 lg:mt-24">
         <NewArrival />
       </div>
       <div className="w-[87%] mx-auto my-6 lg:mt-24">
-        <Gallery />
+        <Category />
       </div>
       <div className="w-[87%] mx-auto my-6 lg:mt-24">
-        <Category />
+        <Gallery />
       </div>
     </div>
   );
