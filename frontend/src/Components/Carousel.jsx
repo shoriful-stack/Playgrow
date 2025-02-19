@@ -8,7 +8,7 @@ import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 
 // import required modules
-import { EffectFade, Navigation } from "swiper/modules";
+import { Autoplay, EffectFade, Navigation } from "swiper/modules";
 
 export default function Carousel() {
   return (
@@ -17,10 +17,10 @@ export default function Carousel() {
         spaceBetween={30}
         effect={"fade"}
         navigation={true}
-        modules={[EffectFade, Navigation]}
+        modules={[EffectFade, Navigation, Autoplay]}
         className="mySwiper"
         autoplay={{
-          delay: 5000,
+          delay: 4000,
           disableOnInteraction: false,
         }}
         speed={1500}

@@ -1,7 +1,7 @@
 const ProductCard = ({ product }) => {
   const { labels, image, name, category, original_price, price } = product;
   return (
-    <div className="bg-white rounded-xl border-gray-200 border px-6 py-9 text-center relative group transition-all duration-300 hover:shadow-sm hover:border-dashed hover:border-gray-300 hover:border-2 overflow-hidden cursor-pointer">
+    <div className="bg-white rounded-2xl border-gray-200 border px-6 py-9 text-center relative group transition-all duration-300 hover:shadow-sm hover:border-dashed hover:border-gray-300 hover:border-2 overflow-hidden cursor-pointer">
       {/* label */}
       {labels && (
         <span

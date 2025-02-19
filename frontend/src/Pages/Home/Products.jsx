@@ -17,7 +17,7 @@ const Products = () => {
       />
 
       <div className="grid lg:grid-cols-4 md:grid-cols-2 lg:gap-6 gap-2 mb-12">
-        {products.map((product, index) => (
+        {products.filter((product) => product.category_id === "3").map((product, index) => (
           <ProductCard key={index} product={product} />
         ))}
       </div>
