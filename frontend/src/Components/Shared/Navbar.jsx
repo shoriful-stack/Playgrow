@@ -8,6 +8,9 @@ import React from "react";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isOpenPages, setIsOpenPages] = useState(false);
+  const [isOpenShop, setIsOpenShop] = useState(false);
+  const [isOpenShopPages, setIsOpenShopPages] = useState(false);
 
   return (
     <section className="uppercase tracking-widest">
@@ -90,7 +93,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to="/contact"
+                to="/blog"
                 className="hover:text-primary transition duration-300"
               >
                 Blog
@@ -203,7 +206,7 @@ const Navbar = () => {
               0
             </span>
           </div>
-          <span className="text-xs">cart $0.00</span>
+          <span className="text-xs">Cart $0.00</span>
           {/* Mobile Menu Button */}
           <button
             className="md:hidden text-gray-800"
@@ -218,6 +221,7 @@ const Navbar = () => {
         </div>
       </div>
 
+      {/* Mobile Dropdown Menu */}
       {isOpen && (
         <ul className="md:hidden bg-white shadow-lg space-y-4 p-4">
           <li>
@@ -225,35 +229,103 @@ const Navbar = () => {
               Home
             </Link>
           </li>
-          <li>
-            <Link
-              to="/shop-list"
-              className="block text-gray-800 hover:text-primary"
+          {/* Pages Dropdown */}
+          <li className="relative">
+            <button
+              onClick={() => setIsOpenPages(!isOpenPages)}
+              className="flex justify-between items-center w-full text-gray-800 hover:text-primary uppercase"
             >
-              Shop List
-            </Link>
+              Pages <span>{isOpenPages ? "▲" : "▼"}</span>
+            </button>
+            {isOpenPages && (
+              <ul className="mt-2 pl-4 space-y-2">
+                <li>
+                  <Link to="/about-us" className="block hover:text-primary">
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/faq" className="block hover:text-primary">
+                    FAQ Page
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/contact-us" className="block hover:text-primary">
+                    Contact Us
+                  </Link>
+                </li>
+              </ul>
+            )}
           </li>
-          <li>
-            <Link
-              to="/shop-single"
-              className="block text-gray-800 hover:text-primary"
+
+          {/* Shop Dropdown */}
+          <li className="relative">
+            <button
+              onClick={() => setIsOpenShop(!isOpenShop)}
+              className="flex justify-between items-center w-full text-gray-800 hover:text-primary uppercase"
             >
-              Shop Single
-            </Link>
+              Shop <span>{isOpenShop ? "▲" : "▼"}</span>
+            </button>
+            {isOpenShop && (
+              <ul className="mt-2 pl-4 space-y-2">
+                <li>
+                  <Link to="/shop-list" className="block hover:text-primary">
+                    Shop List
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/shop-single" className="block hover:text-primary">
+                    Shop Single
+                  </Link>
+                </li>
+                {/* Nested Shop Pages Dropdown */}
+                <li className="relative">
+                  <button
+                    onClick={() => setIsOpenShopPages(!isOpenShopPages)}
+                    className="flex justify-between items-center w-full text-gray-800 hover:text-primary uppercase"
+                  >
+                    Shop Pages <span>{isOpenShopPages ? "▲" : "▼"}</span>
+                  </button>
+                  {isOpenShopPages && (
+                    <ul className="mt-2 pl-4 space-y-2">
+                      <li>
+                        <Link
+                          to="/my-account"
+                          className="block hover:text-primary"
+                        >
+                          My Account
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          to="/wishlist"
+                          className="block hover:text-primary"
+                        >
+                          Wishlist
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/cart" className="block hover:text-primary">
+                          Cart
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          to="/checkout"
+                          className="block hover:text-primary"
+                        >
+                          Checkout
+                        </Link>
+                      </li>
+                    </ul>
+                  )}
+                </li>
+              </ul>
+            )}
           </li>
+
           <li>
-            <Link
-              to="/about"
-              className="block text-gray-800 hover:text-primary"
-            >
-              About Us
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/contact"
-              className="block text-gray-800 hover:text-primary"
-            >
+            <Link to="/blog" className="block text-gray-800 hover:text-primary">
               Blog
             </Link>
           </li>
