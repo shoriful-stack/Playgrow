@@ -11,9 +11,8 @@ const app = express();
 // middleware
 app.use(cors({
   origin: [
-    "http://localhost:5173",
-    "https://medi-nest.web.app",
-    "https://medi-nest.firebaseapp.com",
+    "http://localhost:3000",
+    "https://playgrow-client.vercel.app",
   ]
 }));
 app.use(express.json());
