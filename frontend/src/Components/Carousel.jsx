@@ -20,7 +20,7 @@ export default function Carousel() {
         modules={[EffectFade, Navigation, Autoplay]}
         className="mySwiper"
         autoplay={{
-          delay: 4000,
+          delay: 8000,
           disableOnInteraction: false,
         }}
         speed={1500}
@@ -33,11 +33,27 @@ export default function Carousel() {
           />
         </SwiperSlide>
         <SwiperSlide>
-          <img
-            src="https://i.ibb.co.com/Jj5S7j49/Play-Grow-Baby-Shop-and-Kids-Store-Theme-02-18-2025-12-38-PM-Photoroom.png"
-            className="bg-cover bg-center lg:h-[550px] h-[500px] w-full object-cover"
-            alt="Slide-2"
-          />
+          <div className="bg-[url(https://playgrow.qodeinteractive.com/wp-content/uploads/2023/01/MAIN-HOME-REV-SLIDE-02.jpg)] bg-no-repeat bg-cover bg-center md:h-[550px] h-[500px]">
+            <div className="flex md:justify-end justify-center md:pr-32 pt-20 relative">
+              <img
+                src="https://playgrow.qodeinteractive.com/wp-content/uploads/2023/01/MAINHOME-REV-FIGURE-SLIDE-2.png"
+                alt=""
+                className="md:h-[380px] h-80 w-"
+              />
+              <div className="absolute md:top-48 top-44 right-16 md:right-48 text-center md:py-10 py-6">
+                <p className="md:text-3xl text-xl uppercase tracking-widest text-gray-700">
+                  Your Happy Place
+                </p>
+                <p className="text-gray-500 md:block hidden my-3">
+                  Where your baby's journey started with happiness <br /> and joy.
+                </p>
+                <button className="flex flex-col uppercase text-primary font-medium tracking-widest text-sm mt-4 w-full">
+                  Read More
+                  <span className="font-bold text-xl -mt-3">. . . . . . .</span>
+                </button>
+              </div>
+            </div>
+          </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className="relative">
