@@ -8,8 +8,15 @@ const blogRoutes = require("./Routes/blogRoutes");
 const reviewRoutes = require("./Routes/reviewRoutes");
 
 const app = express();
+// middleware
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://medi-nest.web.app",
+    "https://medi-nest.firebaseapp.com",
+  ]
+}));
 app.use(express.json());
-app.use(cors());
 
 app.use("/categories", categoryRoutes);
 app.use("/products", productRoutes);
