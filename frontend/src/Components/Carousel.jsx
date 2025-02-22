@@ -26,11 +26,31 @@ export default function Carousel() {
         speed={1500}
       >
         <SwiperSlide>
-          <img
-            src="https://i.ibb.co.com/rG85R3LS/rs-slides-rs-slide.png"
-            className="bg-cover bg-center lg:h-[550px] h-[500px] w-full object-cover"
-            alt="Slide-1"
-          />
+          <div className="relative bg-[url('https://i.ibb.co/ZRM03hyC/42df6e7b651fb47564b5431c1fc6186c.png')] bg-no-repeat bg-cover bg-center md:h-[550px] h-[500px]">
+            {/* Main content container */}
+            <div className="absolute inset-0 flex justify-center items-center">
+              {/* Dream Nursery Label */}
+              <img
+                src="https://i.ibb.co/QvY2kPrj/841ab5c8b74cf07e2e2f34803da7558b.png"
+                alt="Your Dream Nursery"
+                className="md:w-[250px] w-[250px]"
+              />
+
+              {/* Floating Decorative Elements */}
+              <div className="absolute md:top-60 top-52 right-20 md:left-[460px]">
+                <img
+                  src="https://i.ibb.co/HLDpPdK6/d9ac751ce639f96a30148b0da03dd8a0.png"
+                  alt="Decor"
+                  className="md:w-[170px] w-[170px]"
+                />
+                <img
+                  src="https://i.ibb.co/931F7S9F/1150dcb16d21cb62bffedcfdc0b262c9.png"
+                  alt="Cat Decoration"
+                  className="w-[70px] absolute bottom-24 left-24"
+                />
+              </div>
+            </div>
+          </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className="bg-[url(https://playgrow.qodeinteractive.com/wp-content/uploads/2023/01/MAIN-HOME-REV-SLIDE-02.jpg)] bg-no-repeat bg-cover bg-center md:h-[550px] h-[500px]">
@@ -38,14 +58,15 @@ export default function Carousel() {
               <img
                 src="https://playgrow.qodeinteractive.com/wp-content/uploads/2023/01/MAINHOME-REV-FIGURE-SLIDE-2.png"
                 alt=""
-                className="md:h-[380px] h-80 w-"
+                className="md:h-[380px] h-80"
               />
-              <div className="absolute md:top-48 top-44 right-16 md:right-48 text-center md:py-10 py-6">
+              <div className="absolute md:top-44 top-44 right-16 md:right-48 text-center md:py-10 py-6">
                 <p className="md:text-3xl text-xl uppercase tracking-widest text-gray-700">
                   Your Happy Place
                 </p>
                 <p className="text-gray-500 md:block hidden my-3">
-                  Where your baby's journey started with happiness <br /> and joy.
+                  Where your baby's journey started with happiness <br /> and
+                  joy.
                 </p>
                 <button className="flex flex-col uppercase text-primary font-medium tracking-widest text-sm mt-4 w-full">
                   Read More
